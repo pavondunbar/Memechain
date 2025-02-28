@@ -6456,9 +6456,9 @@ fn cannot_set_unsupported_validator_count() {
 		// set validator count works
 		assert_ok!(Staking::set_validator_count(RuntimeOrigin::root(), 30));
 		assert_ok!(Staking::set_validator_count(RuntimeOrigin::root(), 50));
-		// setting validator count above 100 does not work
+		// setting validator count above 250 does not work
 		assert_noop!(
-			Staking::set_validator_count(RuntimeOrigin::root(), 51),
+			Staking::set_validator_count(RuntimeOrigin::root(), 251),
 			Error::<Test>::TooManyValidators,
 		);
 	})
